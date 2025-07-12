@@ -47,14 +47,47 @@ export default function ItemListingPage() {
         setImagePreview(null);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         const submissionData = {
-            ...formData,
+            title: formData.title,
+            size: formData.size,
+            category: formData.category,
+            description: "",
+            condition: formData.condition,
+            exchangeType: formData.exchangeType,
             pointValue: calculatedPoints,
         };
-        console.log("Form submitted:", submissionData);
-        // Handle form submission logic here
+
+        const multipartData = new FormData();
+        multipartData.append("product", JSON.stringify(submissionData));
+        multipartData.append("image", formData.image);
+
+        let token = localStorage.getItem("token");
+
+        try {
+            const response = await fetch("http://localhost:3080/auth/api/product", {
+                method: "POST",
+                headers: {
+                    // Do NOT set 'Content-Type': multipart will auto set boundary
+                    Authorization: "Bearer " + token, // if using JWT
+                },
+                body: multipartData,
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to submit product");
+            }
+
+            const result = await response.text();
+            console.log("Success:", result);
+            alert("Product listed successfully!");
+            navigate("/"); // or wherever you want to redirect
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while submitting the product.");
+        }
     };
 
     // Point calculation system - simplified for easy understanding
