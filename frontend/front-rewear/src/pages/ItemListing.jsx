@@ -240,10 +240,12 @@ export default function ItemListingPage() {
                   required
                 >
                   <option value="">Select a category</option>
-                  <option value="tops">👚 Tops</option>
-                  <option value="bottoms">👖 Bottoms</option>
-                  <option value="dresses">👗 Dresses</option>
+                  <option value="tops">👚 womens wear</option>
+                  <option value="bottoms">👖mens wear</option>
+                  <option value="dresses">👗 kids corner </option>
                   <option value="accessories">👜 Accessories</option>
+                  <option value="accessories"> 🏋️ Sports Wear </option>
+                  <option value="accessories">❄️ seasonal</option>
                 </select>
               </div>
 
