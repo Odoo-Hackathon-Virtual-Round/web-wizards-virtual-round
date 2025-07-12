@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import LandingPage from "./pages/LandingPage";
 import BrowsePage from "./pages/BrowsePage";
 import ProductDetailPage from "./pages/ProductDetailPage"; // Add this import
+import ProductListingPage from "./pages/ProductListingPage";
 
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
@@ -32,6 +33,14 @@ function App() {
           element={
             <ProtectedRoute>
               <ProductDetailPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/list"
+          element={
+            <ProtectedRoute>
+              <ProductListingPage />
             </ProtectedRoute>
           }
         />
