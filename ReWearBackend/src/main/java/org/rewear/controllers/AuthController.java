@@ -18,7 +18,7 @@ public class AuthController {
     ProductService productService;
 
     @GetMapping("/allProducts")
-    @PreAuthorize( "hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
