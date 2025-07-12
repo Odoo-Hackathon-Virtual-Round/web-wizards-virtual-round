@@ -18,16 +18,19 @@ const SignUp = () => {
     setLoading(true);
 
     try {
+      // Register the user
       await authService.register(
         formData.name,
         formData.email,
         formData.password
       );
-      // After successful registration, automatically log them in
+
+      // After successful registration, login
       await authService.login(formData.email, formData.password);
-      navigate("/browse");
+      navigate("/");
     } catch (err) {
-      setError(err.message || "Failed to sign up");
+      setError(err.message);
+      console.error("Registration error:", err);
     } finally {
       setLoading(false);
     }

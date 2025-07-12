@@ -15,10 +15,15 @@ const SignIn = () => {
     setLoading(true);
 
     try {
-      await authService.login(email, password);
-      navigate("/browse"); // Redirect to browse page after successful login
+      const response = await authService.login(email, password);
+      if (response.jwtToken) {
+        navigate("/");
+      } else {
+        setError("Invalid login response");
+      }
     } catch (err) {
-      setError(err.message || "Failed to sign in");
+      setError(err.message);
+      console.error("Login error:", err);
     } finally {
       setLoading(false);
     }
