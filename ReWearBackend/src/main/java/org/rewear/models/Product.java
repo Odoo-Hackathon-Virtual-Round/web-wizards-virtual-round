@@ -1,6 +1,7 @@
 package org.rewear.models;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("products")
 @TypeAlias("product")
 public class Product {
+    @Id
     String productId;
     String name;
     String description;
