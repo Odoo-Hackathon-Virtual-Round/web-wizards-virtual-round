@@ -25,13 +25,13 @@ const LandingPage = () => {
               />
             </div>
             <div className="flex gap-4">
-              <button 
+              <button
                 onClick={redirectToSignIn}
                 className="px-4 py-2 rounded-full bg-white/20 text-white hover:-translate-y-0.5 transition-transform"
               >
                 Sign In
               </button>
-              <button 
+              <button
                 onClick={redirectToSignUp}
                 className="px-4 py-2 rounded-full bg-white text-indigo-600 font-semibold hover:-translate-y-0.5 transition-transform"
               >
@@ -50,13 +50,14 @@ const LandingPage = () => {
             Join the sustainable fashion revolution. Trade, discover amazing pre-loved clothing.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <button 
-              onClick={redirectToBrowse} 
+            <button
+              onClick={redirectToBrowse}
               className="px-8 py-3 rounded-full bg-white text-indigo-600 font-semibold hover:-translate-y-1 transition-all shadow-lg"
             >
               Browse Items
             </button>
-            <button className="px-8 py-3 rounded-full bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-semibold hover:-translate-y-1 transition-all shadow-lg">
+            <button
+              onClick={redirectToList} className="px-8 py-3 rounded-full bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-semibold hover:-translate-y-1 transition-all shadow-lg">
               List an Item
             </button>
           </div>
@@ -148,7 +149,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4">

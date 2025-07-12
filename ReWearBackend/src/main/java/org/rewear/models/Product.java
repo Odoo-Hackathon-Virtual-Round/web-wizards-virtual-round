@@ -18,7 +18,7 @@ public class Product {
     String name;
     String description;
     String size;
-    String image;
+    String imagePath;
     String condition;
     String category;
     String exchangeType;
