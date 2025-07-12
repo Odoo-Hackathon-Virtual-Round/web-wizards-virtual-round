@@ -1,4 +1,4 @@
-package org.rewear.models;
+package org.rewear.dto;
 
 import lombok.*;
 

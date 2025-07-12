@@ -2,7 +2,7 @@ package org.rewear.services;
 
 
 import org.rewear.models.User;
-import org.rewear.models.UserDTO;
+import org.rewear.dto.UserDTO;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public interface UserService {
 
     String setUser(UserDTO user);
 
-    User updateUser(User user);
+    String updateUser(UserDTO user);
 
     User deleteUser(String username);
 
