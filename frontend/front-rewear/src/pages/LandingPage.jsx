@@ -50,7 +50,10 @@ const LandingPage = () => {
             Join the sustainable fashion revolution. Trade, discover amazing pre-loved clothing.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <button className="px-8 py-3 rounded-full bg-white text-indigo-600 font-semibold hover:-translate-y-1 transition-all shadow-lg">
+            <button 
+              onClick={redirectToBrowse} 
+              className="px-8 py-3 rounded-full bg-white text-indigo-600 font-semibold hover:-translate-y-1 transition-all shadow-lg"
+            >
               Browse Items
             </button>
             <button className="px-8 py-3 rounded-full bg-gradient-to-r from-pink-400 to-yellow-400 text-white font-semibold hover:-translate-y-1 transition-all shadow-lg">
