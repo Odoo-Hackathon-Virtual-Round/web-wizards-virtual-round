@@ -1,6 +1,7 @@
 package org.rewear.models;
 
 import lombok.*;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
@@ -10,6 +11,7 @@ import org.springframework.data.annotation.Id;
 @Setter
 @ToString
 @Document("users")
+@TypeAlias("user")
 public class User {
     @Id
     private String userId;
@@ -17,5 +19,4 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private org.bson.Document details;
 }
